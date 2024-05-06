@@ -4,10 +4,10 @@ import TransactionForm from './TransactionForm';
 
 function TransactionManager() {
   const [transactions, setTransactions] = useState([]);
-  const [typeFilter, setTypeFilter] = useState('Entertainment'); // Assuming 'Entertainment' is a valid initial filter
+  const [typeFilter, setTypeFilter] = useState('Entertainment'); 
   const [filter, setFilter] = useState('');
-  const [sortField, setSortField] = useState(''); // Make sure to handle undefined or empty in sorting logic
-  const [sortDirection, setSortDirection] = useState('asc'); // 'asc' or 'desc'
+  const [sortField, setSortField] = useState(''); 
+  const [sortDirection, setSortDirection] = useState('asc'); 
 
   const handleNewTransaction = transaction => {
     setTransactions([...transactions, transaction]);
