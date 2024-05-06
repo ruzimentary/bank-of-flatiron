@@ -27,11 +27,10 @@ function TransactionManager() {
     setSortDirection(isAsc ? 'desc' : 'asc');
   };
 
-  // Combine filtering and sorting into one operation to avoid duplication and errors
   const processedTransactions = transactions
     .filter(transaction => (typeFilter === 'Entertainment' || transaction.type === typeFilter) && transaction.description.toLowerCase().includes(filter.toLowerCase()))
     .sort((a, b) => {
-      if (!sortField) return 0; // No sorting if sortField is not set
+      if (!sortField) return 0; 
       const compareA = a[sortField];
       const compareB = b[sortField];
       if (compareA < compareB) return sortDirection === 'asc' ? -1 : 1;
